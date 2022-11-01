@@ -4,11 +4,11 @@ import Search from './Search'
 
 const Header = ({ children }) => {
     return (
-        <header>
-            <div className='inner'>
+        <header className='Header'>
+            <div className="inner flex">
                 <h1>
-                    <Link to='/'>
-                        <img src={process.env.PUBLIC_URL} alt="" />
+                    <Link to="/">
+                        <img src={process.env.PUBLIC_URL + '/logo.png'} alt="" />
                     </Link>
                 </h1>
                 <nav className='gnb'>
