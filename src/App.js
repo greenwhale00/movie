@@ -1,61 +1,49 @@
-import React from "react";
+import React from 'react'
 import List from './List';
 import './common.scss'
+import { Link, Route, Routes } from 'react-router-dom';
 
-function App() {
-
+const App = () => {
   const genreList = [
     "Action",
+    "Adventure",
+    "Animation",
+    "Comedy",
+    "Crime",
+    "Drama",
     "Fantasy",
     "Romance",
     "Thriller",
-    "Comedy",
-    "Crime",
-    "Animation",
-    "Adventure",
-    "Drama",
     "Western"
   ]
-
-
   return (
     <div>
-
-      <ul className="List">
+      <ul className='List'>
         {
           genreList.map(it => {
-return {
-  <li>
-  <Link to ={it}>{it}</Link>
-  </li>
-}
+            return (
+              <li>
+                <Link to={it}>{it}</Link>
+              </li>
+            )
           })
         }
       </ul>
+      <Routes>
+        {
+          genreList.map(it => {
+            return (
+              <Route path={it} element={<List genre={it} limit={5} />} />
+            )
+          })
+        }
+      </Routes>
 
-<Routes>
-  {
-    genreList.map(it => {
-      return (
-        <Route path={genreList[0]} />
-      )
-    })
-  }
-  
-</Routes>
-
-
-
-
-     
-        <List genre='Drama' limit={20} />
-        <List genre='Action' limit={20} />
-        <List genre='horror' limit={20} />
-     
-
-    </div >
-
-  );
+      <List genre='Drama' limit={20} />
+      <List genre='Action' limit={20} />
+      <List genre='Horror' limit={20} />
+    </div>
+  )
 }
 
-export default App;
+export default App

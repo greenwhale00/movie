@@ -15,11 +15,12 @@ const List = ({ genre, limit }) => {
 
     useEffect(() => {
         movieData()
-    }, [])
+    }, [genre])
     return (
         <div>
             {
-                load ? <div>로딩중...</div>
+                load
+                    ? <div>로딩중...</div>
                     :
                     <ul className='List'>
                         {
