@@ -14,11 +14,11 @@ const App = () => {
     "Animation",
     "Comedy",
     "Crime",
-    "Sci-Fi",
+    "Drama",
     "Fantasy",
     "Romance",
     "Thriller",
-    "Musical"
+    "Western"
   ]
   return (
     <div>
@@ -48,9 +48,9 @@ const App = () => {
       </Routes>
       <All />
 
-      <List genre='Sci-Fi' limit={20} />
-      <List genre='Fantasy' limit={20} />
-      <List genre='Thriller' limit={20} />
+      <List genre='Drama' limit={16} />
+      <List genre='Action' limit={16} />
+      <List genre='Horror' limit={16} />
     </div>
   )
 }
